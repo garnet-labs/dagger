@@ -1,0 +1,56 @@
+name: Garnet Dagger CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  dep-audit:
+    name: Go Module Audit (Garnet)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Garnet Runtime Visibility
+        uses: garnet-org/action@v2
+        with:
+          api_token: ${{ secrets.GARNET_API_TOKEN }}
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: stable
+          cache: false
+
+      - name: Download Go modules
+        run: go mod download
+
+      - name: List top-level dependencies
+        run: go list -m all | head -40
+
+  build-cli:
+    name: Build CLI (Garnet)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Garnet Runtime Visibility
+        uses: garnet-org/action@v2
+        with:
+          api_token: ${{ secrets.GARNET_API_TOKEN }}
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: stable
+          cache: false
+
+      - name: Download Go modules
+        run: go mod download
+
+      - name: Build Dagger CLI
+        run: go build -v ./cmd/dagger/...
+
