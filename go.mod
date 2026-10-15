@@ -116,7 +116,7 @@ require (
 	github.com/moby/sys/mountinfo v0.7.2
 	github.com/moby/sys/reexec v0.1.0
 	github.com/moby/sys/signal v0.7.1
-	github.com/moby/sys/user v0.4.0
+	github.com/moby/sys/user v0.4.1
 	github.com/moby/sys/userns v0.1.0
 	github.com/modelcontextprotocol/go-sdk v1.4.1
 	github.com/morikuni/aec v1.1.0
