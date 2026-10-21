@@ -100,7 +100,7 @@ require (
 	github.com/jedevc/go-libsecret v0.0.0-20250327192457-f925a032ae4f
 	github.com/joho/godotenv v1.5.1
 	github.com/juju/ansiterm v1.0.0
-	github.com/klauspost/compress v1.18.5
+	github.com/klauspost/compress v1.18.7
 	github.com/koron-go/prefixw v1.0.2
 	github.com/lmittmann/tint v1.1.3
 	github.com/mackerelio/go-osstat v0.2.7
